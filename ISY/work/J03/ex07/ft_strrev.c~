@@ -1,0 +1,60 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: isy <marvin@42.fr>                         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/08/06 21:11:53 by isy               #+#    #+#             */
+/*   Updated: 2016/08/07 01:46:08 by isy              ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <stdio.h>
+#include <unistd.h>
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+	return ;
+}
+
+int	ft_strlen(char *str)
+{
+	int i;
+
+	i = 0;
+	while (*(str + i) != '\n')
+	{
+		i += 1;
+	}
+	return (i);
+}
+
+char	*ft_strrev(char *str)
+{
+	int  i;
+	i = ft_strlen(*str);
+
+	const int k = i;
+
+	i = ft_strlen(*str);
+	int  cpt;
+
+	cpt = 0;
+	char lol = *str;
+
+	while (cpt < i)
+	{	
+		str[cpt] = lol[i];
+		cpt += 1;
+		i += -1;
+	}
+	return (&*str);
+}
+
+int		main(void)
+{
+	ft_strrev("abc");
+	return (0);
+}
