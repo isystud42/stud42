@@ -1,0 +1,2 @@
+#!bin/sh
+find . | wc -l | cut -d , -f 1 | bc
