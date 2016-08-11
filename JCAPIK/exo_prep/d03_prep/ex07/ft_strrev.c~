@@ -6,7 +6,7 @@
 /*   By: jcapik <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/06 13:41:48 by jcapik            #+#    #+#             */
-/*   Updated: 2016/08/07 09:58:36 by jcapik           ###   ########.fr       */
+/*   Updated: 2016/08/07 10:05:13 by jcapik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putchar(char c)
 {
-	write(1, &a, 1);
+	write(1, &c, 1);
 }
 
 int		ft_arr_assign(char *str1, char *str2, int *a, int *b)
@@ -56,9 +56,9 @@ char	*ft_strrev(char *str)
 	int			j;
 	char		temstr[ft_getlen(str)];
 
+	ft_putchar('2');
 	j = 0;
 	i = ft_getlen(str);
-	j = 0;
 	while (i >= 0)
 	{
 		ft_swap(&temstr[i], &str[j]);
@@ -74,11 +74,9 @@ char	*ft_strrev(char *str)
 int		main(void)
 {
 	char *str;
-	char a;
 
-	a = '1';
 	str = "abcdefghijk";
-	ft_putchar(&a);
+	ft_putchar('1');
 	ft_strrev(str);
 	return (0);
 }

@@ -6,18 +6,9 @@
 /*   By: jcapik <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/05 01:44:20 by jcapik            #+#    #+#             */
-/*   Updated: 2016/08/08 03:36:11 by jcapik           ###   ########.fr       */
+/*   Updated: 2016/08/11 15:46:09 by jcapik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <unistd.h>
-
-void ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
-
-void	ft_print_comb2(void);
 
 int		ft_putchar2(char a, char b, char c, char d)
 {
@@ -26,7 +17,7 @@ int		ft_putchar2(char a, char b, char c, char d)
 	ft_putchar(' ');
 	ft_putchar(c);
 	ft_putchar(d);
-	if (a != '9' ||  b != '8')
+	if (a != '9' || b != '8')
 	{
 		ft_putchar(',');
 		ft_putchar(' ');
@@ -38,9 +29,9 @@ int		initia_d(char a, char b, char c)
 {
 	if (c == a)
 	{
-		return(b + 1);
+		return (b + 1);
 	}
-	return('0');
+	return ('0');
 }
 
 void	ft_print_comb2(void)
@@ -70,10 +61,4 @@ void	ft_print_comb2(void)
 			b++;
 		}
 	}
-}
-
-int main (void)
-{
-	ft_print_comb2();
-	return(0);
 }

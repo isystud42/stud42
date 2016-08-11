@@ -6,56 +6,37 @@
 /*   By: jcapik <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/07 07:02:49 by jcapik            #+#    #+#             */
-/*   Updated: 2016/08/08 00:56:30 by jcapik           ###   ########.fr       */
+/*   Updated: 2016/08/11 15:11:39 by jcapik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h>
-
-int     ft_getlen(char *str)
-{
-    int i;
-
-    i = 0;
-    while (*(str + i) != '\0')
-    {
-        i++;
-    }
-    i--;
-    return (i);
-}
-
-char	ft_getnum(char *str)
+int		ft_getlen(char *str)
 {
 	int i;
 
 	i = 0;
 	while (str[i] != '\0')
-		
+	{
+		i++;
+	}
+	i--;
+	return (i);
 }
 
-void	ft_putchar(char c);
-
-int     ft_atoi(char *str)
+int		ft_atoi(char *str)
 {
-    int resultat;
-    int longueur;
-    int i;
+	int resultat;
+	int pouet;
+	int i;
 
-    resultat = 0;
-	longueur = 0;
-	i = ft_genlen(str);
-    while (str[i] >= '0' && str[i] <= '9')
-    {
-        resultat = resultat * 10 + str [i] - 48;
-
-    }
-    return resultat ;
-}
-
-int main()
-{
-    printf("%d", ft_atoi("1234"));
-    return 0 ;
+	resultat = 0;
+	pouet = 1;
+	i = ft_getlen(str);
+	while (i >= 0)
+	{
+		resultat = resultat + (str[i] - 48) * pouet;
+		i--;
+		pouet = pouet * 10;
+	}
+	return (resultat);
 }

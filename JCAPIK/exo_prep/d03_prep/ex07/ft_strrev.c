@@ -6,11 +6,12 @@
 /*   By: jcapik <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/06 13:41:48 by jcapik            #+#    #+#             */
-/*   Updated: 2016/08/07 10:05:13 by jcapik           ###   ########.fr       */
+/*   Updated: 2016/08/11 15:27:52 by jcapik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdio.h>
 
 void	ft_putchar(char c)
 {
@@ -50,33 +51,32 @@ int		ft_getlen(char *str)
 	return (i);
 }
 
-char	*ft_strrev(char *str)
+const char	*ft_strrev(char *str)
 {
 	int			i;
 	int			j;
 	char		temstr[ft_getlen(str)];
 
-	ft_putchar('2');
 	j = 0;
 	i = ft_getlen(str);
 	while (i >= 0)
 	{
-		ft_swap(&temstr[i], &str[j]);
+		temstr[j] = str[i];
 		j++;
 		i--;
 	}
-	i = ft_getlen(str);
-	j = 0;
-	ft_arr_assign(str, temstr, &j, &i);
+	printf("%s ", temstr);
+	i = 0;
+	while(str[i] != '\0')
+	{
+		str[i] = temstr[i];
+		i++;
+	}
 	return (str);
 }
 
 int		main(void)
 {
-	char *str;
-
-	str = "abcdefghijk";
-	ft_putchar('1');
-	ft_strrev(str);
+	printf("%s", ft_strrev("abcdefg"));
 	return (0);
 }

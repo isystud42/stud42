@@ -6,24 +6,22 @@
 /*   By: jcapik <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/04 18:00:56 by jcapik            #+#    #+#             */
-/*   Updated: 2016/08/04 19:18:49 by jcapik           ###   ########.fr       */
+/*   Updated: 2016/08/11 15:39:49 by jcapik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
 
-void ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
+void	ft_putchar(char c);
 
-int main (int argc, char *argv[])
+void	ft_print_reverse_alphabet(void)
 {
-	int i = 0;
-	int C = 122;
-	while ( C >= 97 )
+	int i;
+	int c;
+
+	i = 0;
+	c = 'z';
+	while (c >= 'a')
 	{
-		ft_putchar(C);
-		C--;
+		ft_putchar(c);
+		c--;
 	}
-	return (0);
 }

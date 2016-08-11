@@ -1,0 +1,28 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jcapik <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/08/10 04:33:06 by jcapik            #+#    #+#             */
+/*   Updated: 2016/08/10 04:44:05 by jcapik           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
+int ft_check(char *str, char *to_find, int i)
+{
+	if (to_find[i] == '\0')
+		return (0);
+	else if (str[i] != to_find[i])
+		return(1);
+	return (ft_check(str, to_find, i + 1));
+
+int *ft_strstr(char *str, char *to_find)
+{
+	int i;
+
+	while (str[i] != '\0')
+	{
+		

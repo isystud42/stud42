@@ -6,25 +6,20 @@
 /*   By: jcapik <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/04 17:50:12 by jcapik            #+#    #+#             */
-/*   Updated: 2016/08/06 20:12:09 by jcapik           ###   ########.fr       */
+/*   Updated: 2016/08/11 15:37:29 by jcapik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
 
+int		ft_putchar(char c);
 
-int  ft_putchar( char c)
+void	ft_print_alphabet(void)
 {
-	write(1, &c, 1);
-	return (0);
-}
+	int c;
 
-int main (int argc, char *argv[])
-{
-	int C = 97;
-	while (C <= 122)
+	c = 'a';
+	while (c <= 'z')
 	{
-		ft_putchar(C);
-		C++;
+		ft_putchar(c);
+		c++;
 	}
-	return (0);
-} 
+}

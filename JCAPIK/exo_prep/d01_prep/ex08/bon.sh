@@ -1,1 +1,1 @@
-ldapsearch -x uid | grep "bon" | grep "uid:" | wc -l | sed "s/ //g"
+ldapsearch -x sn | grep "BON" | grep "sn:" | wc -l | sed "s/ //g"
