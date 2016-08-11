@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
+/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: isy <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/08/08 08:11:40 by isy               #+#    #+#             */
-/*   Updated: 2016/08/09 16:17:27 by isy              ###   ########.fr       */
+/*   Created: 2016/08/11 02:53:49 by isy               #+#    #+#             */
+/*   Updated: 2016/08/11 05:14:15 by isy              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stdio.h>
 
-int	ft_iterative_factorial(int nb)
+char    *ft_strlowcase(char *str)
 {
-	int i;
+    int i;
 
-	i = nb;
-	if (i < 0)
-	{
-		return (0);
-	}
-	while (i > 1)
-	{
-		nb = nb * (i - 1);
-		i += -1;
-		printf("%d", nb);
-	}
-	return (nb);
+    i = 0;
+    while (str[i] != '\0')
+    {
+        if (str[i] >= 'A' && str[i] <= 'Z')
+            str[i] = str[i] + 32;
+        i++;
+    }
+    return (str);
+}
+
+int main()
+{
+    char str[] = "MAMAN";
+
+    printf("%s", ft_strlowcase(str));
+    return (0);
 }

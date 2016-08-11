@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: isy <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/08/08 08:11:40 by isy               #+#    #+#             */
-/*   Updated: 2016/08/09 16:17:27 by isy              ###   ########.fr       */
+/*   Created: 2016/08/10 07:17:31 by isy               #+#    #+#             */
+/*   Updated: 2016/08/10 07:35:49 by isy              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_iterative_factorial(int nb)
+char	*ft_strcpy(char *dest, char *src);
 {
-	int i;
-
-	i = nb;
-	if (i < 0)
+	int i = 0;
+	while (src[i] != "\0")
 	{
-		return (0);
+		dest[i] = src[i];
+		i += 1;
 	}
-	while (i > 1)
-	{
-		nb = nb * (i - 1);
-		i += -1;
-		printf("%d", nb);
-	}
-	return (nb);
+	dest[i]= src[i];
+	return (*dest) ;
 }

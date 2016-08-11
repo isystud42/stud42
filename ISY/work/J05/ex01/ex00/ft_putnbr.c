@@ -1,29 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: isy <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/08/08 08:11:40 by isy               #+#    #+#             */
-/*   Updated: 2016/08/09 16:17:27 by isy              ###   ########.fr       */
+/*   Created: 2016/08/09 15:38:52 by isy               #+#    #+#             */
+/*   Updated: 2016/08/11 02:30:45 by isy              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_iterative_factorial(int nb)
-{
-	int i;
+#include <unistd.h>
 
-	i = nb;
-	if (i < 0)
+void ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+void ft_putnbr(int nb)
+{
+	if (nb <= 0)
 	{
-		return (0);
+		nb = -nb
+		ft_putchar('-');
 	}
-	while (i > 1)
-	{
-		nb = nb * (i - 1);
-		i += -1;
-		printf("%d", nb);
-	}
-	return (nb);
+	if (nb >= 10)
+		ft_putnbr(nb / 10);
+	ft_putchar(nb % 10  + '0');
+}
+  
+
+int main()
+{
+	ft_putnbr(12345);
+	return 0;
 }
